@@ -15,6 +15,9 @@ when a long run is happening.
 └─────────────────────────────┘
 ```
 
+Registered as *DoubleShot for Claude Code*; it presents itself as **DoubleShot**
+everywhere in the UI.
+
 ## What it does
 
 - **Live spend in the menu bar** — `$13.47/$50`, coloured by how close you are.
@@ -27,13 +30,38 @@ when a long run is happening.
 Everything is read from the transcripts Claude Code already writes to
 `~/.claude/projects`. No network calls, no telemetry.
 
+## Install
+
+Grab the latest **DoubleShot.dmg** from
+[Releases](https://github.com/jeremiahlukus/doubleshot/releases), open it, and drag the app
+to Applications.
+
+It's signed with a Developer ID certificate and notarized by Apple, so it opens normally —
+no right-click → Open, no "unidentified developer" warning. Verify that yourself if you
+like:
+
+```bash
+spctl -a -vvv -t exec /Applications/DoubleShot.app
+# accepted
+# source=Notarized Developer ID
+# origin=Developer ID Application: Jeremiah Parrack (YWNTFJ7ZP3)
+```
+
+There's no Dock icon — look in the menu bar. Enable **Launch at Login** from the panel if
+you want it to stick around.
+
+> Distributed directly rather than through the Mac App Store, which isn't an option here:
+> the App Store requires the App Sandbox, and a sandboxed app can't read
+> `~/.claude/projects`, can't shell out to `pmset`, and can't install the sudoers rule that
+> makes lid-closed mode work. Those three things are the app.
+
 ## Requirements
 
 - macOS 13.0+
 - Xcode 15+
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) to regenerate the project from `project.yml`
 
-## Building
+## Building from source
 
 ```bash
 xcodegen generate           # brew install xcodegen, if needed
@@ -253,9 +281,14 @@ the built-ins at launch. Values are dollars per million tokens, `[input, output]
 | `Cost/Budget.swift` | Reads/writes `~/.claude/usage-budget.json`, preserving unknown keys. |
 | `Cost/BudgetNotifier.swift` | Fires each threshold once per day. |
 | `Power/KeepAwakeManager.swift` | Power assertions and the off/on/auto decision. |
-| `UI/StatusBarIcon.swift` | Draws the coloured menu bar label. |
+| `Power/LidSleepController.swift` | Lid-close sleep via `pmset`, with the marker, cap and guards. |
+| `UI/StatusBarIcon.swift` | Draws the menu bar label — template or coloured pill. |
+| `UI/LimitEditor.swift` | The editable daily limit and presets. |
 | `UI/PanelView.swift` | The menu bar dropdown. |
 | `UI/DashboardView.swift` | The window. |
+| `scripts/release.sh` | Signs, notarizes and staples a distributable DMG. |
+| `scripts/make-icon.sh` | Renders the AppIcon set from one square PNG. |
+| `scripts/enable-lid-mode.sh` | Installs the narrow sudoers rule for lid-closed mode. |
 
 ### Accuracy details
 
@@ -315,6 +348,34 @@ The engine was ported from `claude_cost`'s `usage_cost.py` and checked against i
 30-day window: 22 of 24 active days matched to the cent. The two that didn't were the days
 with subagent activity, and the total difference equalled the subagent spend exactly —
 the only intended divergence.
+
+## Cutting a release
+
+```bash
+./scripts/release.sh        # archive → sign → notarize → staple → verify
+```
+
+Produces `build/DoubleShot.dmg`, signed with Developer ID, notarized by Apple, and
+stapled. Attach it to a GitHub release. Needs two one-time setup steps, both documented
+at the top of the script: a `Developer ID Application` certificate, and a stored
+notarization credential (`xcrun notarytool store-credentials`).
+
+Two things the script encodes because they're easy to get wrong:
+
+- **Archive with automatic signing, and re-sign during export.** Passing
+  `CODE_SIGN_IDENTITY="Developer ID Application"` to `xcodebuild archive` collides with
+  automatic signing and fails outright with *"conflicting provisioning settings"*. The
+  Developer ID signature is applied by `-exportArchive` with `method: developer-id`.
+- **The app and the DMG are notarized and stapled separately.** Stapling only the DMG
+  leaves the app with no local ticket once someone drags it out, so Gatekeeper has to ask
+  Apple over the network — which fails offline or behind a restrictive proxy. And the DMG
+  needs its own `codesign`: notarizing an unsigned container still gets you
+  `spctl: rejected — no usable signature`.
+
+Certificate types are a maze, so for reference — `Developer ID Application` signs the
+`.app` for direct download, and it's the only one of the five that matters here.
+`Apple Distribution` and `Mac Installer Distribution` are App Store certs, and
+`Apple Development` only works on your own machines.
 
 ## App icon
 

@@ -1,6 +1,6 @@
 name: DoubleShot
 options:
-  bundleIdPrefix: com.jeremiahlukus
+  bundleIdPrefix: com.jparrack
   createIntermediateGroups: true
 targets:
   DoubleShot:
@@ -13,7 +13,7 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jeremiahlukus.DoubleShot
+        PRODUCT_BUNDLE_IDENTIFIER: com.jparrack.doubleshot
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
@@ -27,3 +27,6 @@ targets:
       properties:
         LSUIElement: true
         CFBundleDisplayName: DoubleShot
+        # Required for App Store submission; also what Finder groups the app under.
+        LSApplicationCategoryType: public.app-category.developer-tools
+        NSHumanReadableCopyright: "Copyright © 2026 Jeremiah Parrack. MIT licensed."

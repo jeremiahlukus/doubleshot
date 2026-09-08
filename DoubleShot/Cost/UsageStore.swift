@@ -38,7 +38,7 @@ final class UsageStore: ObservableObject {
 
     private let scanner = TranscriptScanner()
     private let notifier = BudgetNotifier()
-    private let queue = DispatchQueue(label: "com.jeremiahlukus.DoubleShot.scan", qos: .utility)
+    private let queue = DispatchQueue(label: "com.jparrack.doubleshot.scan", qos: .utility)
     private var refreshTimer: Timer?
     private var scanInFlight = false
     private var cancellables = Set<AnyCancellable>()
