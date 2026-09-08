@@ -1,0 +1,29 @@
+name: DoubleShot
+options:
+  bundleIdPrefix: com.jeremiahlukus
+  createIntermediateGroups: true
+targets:
+  DoubleShot:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: DoubleShot
+      - path: scripts/enable-lid-mode.sh
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jeremiahlukus.DoubleShot
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: true
+        # Not sandboxed: the whole app is a reader of ~/.claude/projects.
+        ENABLE_APP_SANDBOX: false
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "5.0"
+    info:
+      path: DoubleShot/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleDisplayName: DoubleShot

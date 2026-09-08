@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D9FD4AC6BAC0D1AFAA7D487 /* LidSleepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B02F7E6375337CAFBC4E58 /* LidSleepController.swift */; };
+		23DE937705A98D1378BABF90 /* KeepAwakeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6351FC98D7596C6BB23F2 /* KeepAwakeManager.swift */; };
+		328A9F6F6FCE147ACAA24600 /* BudgetNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B82D8C95DCEB11A9F891A2 /* BudgetNotifier.swift */; };
+		397B9EFA18C2335B9B661B47 /* LimitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21318AEB0E49F129EABE0733 /* LimitEditor.swift */; };
+		47E616309DF79CE92C3272F2 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BFDE557A00F48D8DC9EEA /* DashboardView.swift */; };
+		56CC2850658C528A9F8955AE /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6BE53AAFEEA071412EB2 /* Budget.swift */; };
+		62A31A240CDCA269AFE1493F /* enable-lid-mode.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6260215AC4D8B8467D76DC40 /* enable-lid-mode.sh */; };
+		6D732E99EA84789AE117E74C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BB3CD32D67EED9D4A6480 /* Assets.xcassets */; };
+		71EC3A43D1450B511921D9D3 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A6C60137F44474F9B8789 /* PanelView.swift */; };
+		741102F6EC97024EE6C4A092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D002F9429DE647575D0870BD /* AppDelegate.swift */; };
+		BCE4D02BFE2F0CADE70D1F0B /* StatusBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EE5CEFA9C3F242B24A4A9A /* StatusBarIcon.swift */; };
+		C30F43A71263EC90214BEB50 /* TranscriptScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D3633D1DE59DA5053BB622 /* TranscriptScanner.swift */; };
+		C96E95FC486DF3E2CA7B99DA /* DoubleShotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57DF6703B0C0696FF52DE97 /* DoubleShotApp.swift */; };
+		DA8DC317E1B20EA8AA87E37E /* UsageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16CB8D47E755A50D5265E6 /* UsageModels.swift */; };
+		EF782698AB4B30633F293FB4 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E47CE3F85DF1A8215C9EB6 /* LoginItemManager.swift */; };
+		F8D710052E0E9E4C32CF467B /* PricingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3097054121B348D0FDDA30C /* PricingTable.swift */; };
+		FBBF30531CCE0C3CD069D1AA /* UsageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98230DBF985E47360D72ED17 /* UsageStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B2A6C60137F44474F9B8789 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		20E47CE3F85DF1A8215C9EB6 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		21318AEB0E49F129EABE0733 /* LimitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitEditor.swift; sourceTree = "<group>"; };
+		22F6351FC98D7596C6BB23F2 /* KeepAwakeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepAwakeManager.swift; sourceTree = "<group>"; };
+		6260215AC4D8B8467D76DC40 /* enable-lid-mode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "enable-lid-mode.sh"; sourceTree = "<group>"; };
+		64B02F7E6375337CAFBC4E58 /* LidSleepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidSleepController.swift; sourceTree = "<group>"; };
+		6B4BB3CD32D67EED9D4A6480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89B82D8C95DCEB11A9F891A2 /* BudgetNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNotifier.swift; sourceTree = "<group>"; };
+		91D3633D1DE59DA5053BB622 /* TranscriptScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptScanner.swift; sourceTree = "<group>"; };
+		98230DBF985E47360D72ED17 /* UsageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStore.swift; sourceTree = "<group>"; };
+		AA4D6BE53AAFEEA071412EB2 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		B3097054121B348D0FDDA30C /* PricingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricingTable.swift; sourceTree = "<group>"; };
+		BA55EAF4B767CDA70590792D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CF6BFDE557A00F48D8DC9EEA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		D002F9429DE647575D0870BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE16CB8D47E755A50D5265E6 /* UsageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageModels.swift; sourceTree = "<group>"; };
+		E2EE5CEFA9C3F242B24A4A9A /* StatusBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarIcon.swift; sourceTree = "<group>"; };
+		E373A737F275D2323385E29F /* DoubleShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57DF6703B0C0696FF52DE97 /* DoubleShotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleShotApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		42D88798BC0AC562A89C57CA = {
+			isa = PBXGroup;
+			children = (
+				4BE2053773F7D91BA0E8334E /* DoubleShot */,
+				5058AE2E02DE6FB217914583 /* scripts */,
+				DF9D6C4BCAE1BFDDB1269439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BE2053773F7D91BA0E8334E /* DoubleShot */ = {
+			isa = PBXGroup;
+			children = (
+				D002F9429DE647575D0870BD /* AppDelegate.swift */,
+				6B4BB3CD32D67EED9D4A6480 /* Assets.xcassets */,
+				F57DF6703B0C0696FF52DE97 /* DoubleShotApp.swift */,
+				BA55EAF4B767CDA70590792D /* Info.plist */,
+				979204D6453AB99E5A2FDF73 /* Cost */,
+				E1FCB031801FB6CA9D16A586 /* Power */,
+				6131E6C99768955122EDFD0F /* UI */,
+			);
+			path = DoubleShot;
+			sourceTree = "<group>";
+		};
+		5058AE2E02DE6FB217914583 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6260215AC4D8B8467D76DC40 /* enable-lid-mode.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		6131E6C99768955122EDFD0F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CF6BFDE557A00F48D8DC9EEA /* DashboardView.swift */,
+				21318AEB0E49F129EABE0733 /* LimitEditor.swift */,
+				20E47CE3F85DF1A8215C9EB6 /* LoginItemManager.swift */,
+				0B2A6C60137F44474F9B8789 /* PanelView.swift */,
+				E2EE5CEFA9C3F242B24A4A9A /* StatusBarIcon.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		979204D6453AB99E5A2FDF73 /* Cost */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6BE53AAFEEA071412EB2 /* Budget.swift */,
+				89B82D8C95DCEB11A9F891A2 /* BudgetNotifier.swift */,
+				B3097054121B348D0FDDA30C /* PricingTable.swift */,
+				91D3633D1DE59DA5053BB622 /* TranscriptScanner.swift */,
+				DE16CB8D47E755A50D5265E6 /* UsageModels.swift */,
+				98230DBF985E47360D72ED17 /* UsageStore.swift */,
+			);
+			path = Cost;
+			sourceTree = "<group>";
+		};
+		DF9D6C4BCAE1BFDDB1269439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E373A737F275D2323385E29F /* DoubleShot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1FCB031801FB6CA9D16A586 /* Power */ = {
+			isa = PBXGroup;
+			children = (
+				22F6351FC98D7596C6BB23F2 /* KeepAwakeManager.swift */,
+				64B02F7E6375337CAFBC4E58 /* LidSleepController.swift */,
+			);
+			path = Power;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D73BBE6C9DC72C88A6E09FD /* DoubleShot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D198FF2B7A4FAC716E5D72B /* Build configuration list for PBXNativeTarget "DoubleShot" */;
+			buildPhases = (
+				965B93063B3E26BFBFE95C19 /* Sources */,
+				3833037BD2F86A0F435295B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoubleShot;
+			packageProductDependencies = (
+			);
+			productName = DoubleShot;
+			productReference = E373A737F275D2323385E29F /* DoubleShot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3C5BCE5C1ABB599DF4FBEC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3D73BBE6C9DC72C88A6E09FD = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 85B84BB24432083781431C4F /* Build configuration list for PBXProject "DoubleShot" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 42D88798BC0AC562A89C57CA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DF9D6C4BCAE1BFDDB1269439 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D73BBE6C9DC72C88A6E09FD /* DoubleShot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3833037BD2F86A0F435295B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D732E99EA84789AE117E74C /* Assets.xcassets in Resources */,
+				62A31A240CDCA269AFE1493F /* enable-lid-mode.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		965B93063B3E26BFBFE95C19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741102F6EC97024EE6C4A092 /* AppDelegate.swift in Sources */,
+				56CC2850658C528A9F8955AE /* Budget.swift in Sources */,
+				328A9F6F6FCE147ACAA24600 /* BudgetNotifier.swift in Sources */,
+				47E616309DF79CE92C3272F2 /* DashboardView.swift in Sources */,
+				C96E95FC486DF3E2CA7B99DA /* DoubleShotApp.swift in Sources */,
+				23DE937705A98D1378BABF90 /* KeepAwakeManager.swift in Sources */,
+				1D9FD4AC6BAC0D1AFAA7D487 /* LidSleepController.swift in Sources */,
+				397B9EFA18C2335B9B661B47 /* LimitEditor.swift in Sources */,
+				EF782698AB4B30633F293FB4 /* LoginItemManager.swift in Sources */,
+				71EC3A43D1450B511921D9D3 /* PanelView.swift in Sources */,
+				F8D710052E0E9E4C32CF467B /* PricingTable.swift in Sources */,
+				BCE4D02BFE2F0CADE70D1F0B /* StatusBarIcon.swift in Sources */,
+				C30F43A71263EC90214BEB50 /* TranscriptScanner.swift in Sources */,
+				DA8DC317E1B20EA8AA87E37E /* UsageModels.swift in Sources */,
+				FBBF30531CCE0C3CD069D1AA /* UsageStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1FC4E4AFAB0C347F3B33D1EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		584649AD75FC00748DD1F71B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = DoubleShot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremiahlukus.DoubleShot;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8C1C1B89CE43712608BC6F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = DoubleShot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremiahlukus.DoubleShot;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B370C7E052F0D43DF95B9895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D198FF2B7A4FAC716E5D72B /* Build configuration list for PBXNativeTarget "DoubleShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1C1B89CE43712608BC6F59 /* Debug */,
+				584649AD75FC00748DD1F71B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		85B84BB24432083781431C4F /* Build configuration list for PBXProject "DoubleShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FC4E4AFAB0C347F3B33D1EC /* Debug */,
+				B370C7E052F0D43DF95B9895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3C5BCE5C1ABB599DF4FBEC7 /* Project object */;
+}
