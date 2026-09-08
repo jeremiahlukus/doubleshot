@@ -1,6 +1,89 @@
-.DS_Store
+# ---- Signing material and secrets -------------------------------------------
+# Nothing here should ever reach a public repo. Certificates and provisioning
+# profiles are the ones that actually matter: a leaked .p12 plus its password
+# lets someone sign code as you.
+*.p12
+*.pfx
+*.cer
+*.certSigningRequest
+*.mobileprovision
+*.provisionprofile
+*.pem
+*.key
+.env
+.env.*
+*.secret
+secrets.*
+# Xcode can write your Team ID into these when signing locally.
+*.xcconfig.local
+ExportOptions.plist
+
+# ---- Xcode build output ------------------------------------------------------
 build/
 DerivedData/
-*.xcuserstate
+*.o
+*.a
+*.dSYM/
+*.ipa
+*.app
+*.xcarchive
+*.swiftmodule
+*.swiftsourceinfo
+*.hmap
+
+# ---- Xcode per-user state ----------------------------------------------------
+# Window layout, breakpoints, which file you had open. Noise for everyone else,
+# and it carries your local paths.
 xcuserdata/
-*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+*.xcscmblueprint
+*.xccheckout
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+*.pbxuser
+
+# ---- Swift Package Manager ---------------------------------------------------
+.build/
+.swiftpm/
+Packages/
+
+# ---- macOS ------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.apdisk
+
+# ---- Editors and local tooling ----------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.netrwhist
+
+# ---- AI assistant local state ------------------------------------------------
+# CLAUDE.md / AGENTS.md are meant to be shared; per-machine settings are not.
+.claude/settings.local.json
+.claude/*.local.json
+.aider*
+.cursorignore
+
+# ---- Local scratch -----------------------------------------------------------
+# Ad-hoc verification harnesses and their output. The lid-mode and cost-engine
+# tests were run as throwaway binaries against real transcripts; none of that
+# belongs in the repo.
+*.log
+tmp/
+scratch/
+/verify
+/lidtest
+/immediacy
+/state
