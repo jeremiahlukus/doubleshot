@@ -16,7 +16,9 @@ if [[ -z "$SRC" || ! -f "$SRC" ]]; then
     exit 1
 fi
 
-read -r W H < <(sips -g pixelWidth -g pixelHeight "$SRC" 2>/dev/null | awk '/pixel/{printf "%s ", $2}')
+# awk must emit a trailing newline, or `read` returns non-zero and set -e kills us.
+read -r W H < <(sips -g pixelWidth -g pixelHeight "$SRC" 2>/dev/null \
+    | awk '/pixel/{printf "%s ", $2} END{print ""}')
 if [[ -z "${W:-}" ]]; then
     echo "Could not read image dimensions from $SRC" >&2
     exit 1
@@ -42,6 +44,27 @@ do
     printf "  %-22s %sx%s\n" "$name.png" "$px" "$px"
 done
 
+# Write Contents.json in the same pass, with explicit filenames. Declaring slots
+# without them makes Xcode report "unassigned children" and silently ship a
+# near-empty AppIcon.icns.
+cat > "$ICONSET/Contents.json" <<'JSON'
+{
+  "images" : [
+    { "idiom" : "mac", "scale" : "1x", "size" : "16x16",   "filename" : "icon_16x16.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "16x16",   "filename" : "icon_16x16@2x.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "32x32",   "filename" : "icon_32x32.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "32x32",   "filename" : "icon_32x32@2x.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "128x128", "filename" : "icon_128x128.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "128x128", "filename" : "icon_128x128@2x.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "256x256", "filename" : "icon_256x256.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "256x256", "filename" : "icon_256x256@2x.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "512x512", "filename" : "icon_512x512.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "512x512", "filename" : "icon_512x512@2x.png" }
+  ],
+  "info" : { "author" : "xcode", "version" : 1 }
+}
+JSON
+
 echo
-echo "Wrote 10 icons to $ICONSET"
+echo "Wrote 10 icons + Contents.json to $ICONSET"
 echo "Now run: xcodegen generate && xcodebuild -project DoubleShot.xcodeproj -scheme DoubleShot build"
