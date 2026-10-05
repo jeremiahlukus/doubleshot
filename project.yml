@@ -14,8 +14,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jparrack.doubleshot
-        MARKETING_VERSION: "1.0"
-        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0.1"
+        CURRENT_PROJECT_VERSION: "2"
         CODE_SIGN_STYLE: Automatic
         ENABLE_HARDENED_RUNTIME: true
         # Not sandboxed: the whole app is a reader of ~/.claude/projects.
@@ -27,6 +27,8 @@ targets:
       properties:
         LSUIElement: true
         CFBundleDisplayName: DoubleShot
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         # Required for App Store submission; also what Finder groups the app under.
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: "Copyright © 2026 Jeremiah Parrack. MIT licensed."

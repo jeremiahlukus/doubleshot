@@ -4,6 +4,8 @@ import Foundation
 struct ModelRate: Equatable {
     let input: Double
     let output: Double
+    /// Explicit cache-read rate, for models that don't follow the usual 0.1x input.
+    var cacheRead: Double? = nil
 }
 
 /// Multipliers applied to a model's *input* rate for cached tokens.
@@ -42,13 +44,15 @@ struct PricingTable {
     static let builtin = PricingTable(
         standard: [
             "claude-fable-5":    ModelRate(input: 10, output: 50),
-            "claude-fable-5-1":  ModelRate(input: 10, output: 50),
+            "claude-fable-5-1":  ModelRate(input: 10, output: 50, cacheRead: 0.25),
             "claude-mythos-5":   ModelRate(input: 10, output: 50),
+            "claude-opus-5-5":   ModelRate(input: 4,  output: 20, cacheRead: 0.20),
             "claude-opus-5":     ModelRate(input: 5,  output: 25),
             "claude-opus-4-8":   ModelRate(input: 5,  output: 25),
             "claude-opus-4-7":   ModelRate(input: 5,  output: 25),
             "claude-opus-4-6":   ModelRate(input: 5,  output: 25),
             "claude-opus-4-5":   ModelRate(input: 5,  output: 25),
+            "claude-sonnet-5-5": ModelRate(input: 2,  output: 10),
             "claude-sonnet-5":   ModelRate(input: 2,  output: 10),
             "claude-sonnet-4-6": ModelRate(input: 3,  output: 15),
             "claude-sonnet-4-5": ModelRate(input: 3,  output: 15),
@@ -56,6 +60,7 @@ struct PricingTable {
         ],
         // Fast mode on the Opus tier bills at premium rates.
         fast: [
+            "claude-opus-5-5": ModelRate(input: 8,  output: 40, cacheRead: 0.40),
             "claude-opus-5":   ModelRate(input: 10, output: 50),
             "claude-opus-4-8": ModelRate(input: 10, output: 50),
         ]
@@ -91,7 +96,7 @@ struct PricingTable {
             + Double(usage.output) * rate.output
             + Double(usage.cacheWrite5m) * rate.input * CacheMultiplier.write5m
             + Double(usage.cacheWrite1h) * rate.input * CacheMultiplier.write1h
-            + Double(usage.cacheRead) * rate.input * CacheMultiplier.read
+            + Double(usage.cacheRead) * (rate.cacheRead ?? rate.input * CacheMultiplier.read)
         ) / 1_000_000
 
         return .priced(dollars)
@@ -108,9 +113,10 @@ extension PricingTable {
 
     /// Built-in rates, with any user overrides merged on top. Rates drift as models
     /// are released or repriced, and editing a JSON file beats rebuilding the app.
+    /// An optional third element sets an explicit cache-read rate.
     ///
     /// ```json
-    /// { "standard": { "claude-opus-5": [5.0, 25.0] },
+    /// { "standard": { "claude-opus-5": [5.0, 25.0], "claude-opus-5-5": [4.0, 20.0, 0.2] },
     ///   "fast":     { "claude-opus-5": [10.0, 50.0] } }
     /// ```
     static func load() -> PricingTable {
@@ -122,10 +128,11 @@ extension PricingTable {
         func merge(_ key: String, into dict: inout [String: ModelRate]) {
             guard let raw = root[key] as? [String: Any] else { return }
             for (model, value) in raw {
-                guard let pair = value as? [Any], pair.count == 2,
-                      let input = numeric(pair[0]), let output = numeric(pair[1])
+                guard let rates = value as? [Any], (2...3).contains(rates.count),
+                      let input = numeric(rates[0]), let output = numeric(rates[1])
                 else { continue }
-                dict[model] = ModelRate(input: input, output: output)
+                let cacheRead = rates.count == 3 ? numeric(rates[2]) : nil
+                dict[model] = ModelRate(input: input, output: output, cacheRead: cacheRead)
             }
         }
 

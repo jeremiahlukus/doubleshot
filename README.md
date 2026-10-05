@@ -261,11 +261,12 @@ that fanned out, or a session that grew to fill a 1M context and then kept going
 
 Rates are in `PricingTable.builtin`. Rather than rebuild when something is repriced, drop
 a JSON file at `~/Library/Application Support/DoubleShot/pricing.json` — it's merged over
-the built-ins at launch. Values are dollars per million tokens, `[input, output]`:
+the built-ins at launch. Values are dollars per million tokens, `[input, output]`, with an
+optional third value for models whose cache reads aren't the usual 0.1× input:
 
 ```json
 {
-  "standard": { "claude-opus-5": [5.0, 25.0] },
+  "standard": { "claude-opus-5": [5.0, 25.0], "claude-opus-5-5": [4.0, 20.0, 0.2] },
   "fast":     { "claude-opus-5": [10.0, 50.0] }
 }
 ```
